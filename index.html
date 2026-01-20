@@ -1,23 +1,666 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+  <!-- Schema.org Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "30평대 인테리어 견적 컨설팅",
+    "provider": {
+      "@type": "Organization",
+      "name": "인테리어 비용 분석 센터",
+      "url": "https://yourdomain.com",
+      "description": "30평대 아파트 인테리어에 대한 전문적인 비용 분석 및 컨설팅을 제공합니다."
+    },
+    "areaServed": "대한민국",
+    "description": "2026년 최신 데이터 기반 30평대 인테리어 비용 가이드. 합리적인 가격으로 만족도 높은 리모델링을 위한 정보를 제공합니다.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "30평대 인테리어 서비스 유형",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "전체 리모델링 (Full Renovation)"
+          },
+          "priceSpecification": {
+            "@type": "QuantitativeValue",
+            "unitText": "KRW",
+            "value": 30000000,
+            "description": "30평대 전체 인테리어 평균 비용"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "부분 인테리어 (Partial Renovation)"
+          },
+          "priceSpecification": {
+            "@type": "QuantitativeValue",
+            "unitText": "KRW",
+            "value": 10000000,
+            "description": "주방, 욕실 등 특정 공간 부분 인테리어 평균 비용"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- CSS Style optimized for readability and soft aesthetics -->
+  <style>
+    :root {
+      --primary-color: #3f51b5; /* Soft Blue */
+      --secondary-color: #fdd835; /* Soft Yellow for highlights */
+      --text-color: #333333;
+      --light-bg: #f5f5f5;
+      --section-bg: #ffffff;
+      --shadow-color: rgba(0,0,0,0.08);
+      --border-color: #e0e0e0;
+    }
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      letter-spacing: -0.5px;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px var(--shadow-color);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+    nav {
+      background-color: var(--section-bg);
+      box-shadow: 0 2px 5px var(--shadow-color);
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+    }
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 1rem 0;
+      display: block;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--primary-color);
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      background-color: var(--section-bg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px var(--shadow-color);
+    }
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-top: 0;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      color: #555;
+      font-size: 1.4rem;
+      margin-top: 1.5rem;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 10px;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+    th {
+      background-color: #f0f4f8;
+      font-weight: 700;
+      color: var(--text-color);
+    }
+    td.highlight {
+      background-color: var(--secondary-color);
+      font-weight: 700;
+    }
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 1.5rem;
+    }
+    strong {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 700;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 1.5rem 0;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+    .cta-button:hover {
+      background-color: #2a3d90;
+    }
+    .keyword-tags {
+      margin: 1.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .keyword-tags a {
+      background-color: #e0f0ff;
+      color: var(--primary-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .keyword-tags a:hover {
+      background-color: #c0dfff;
+    }
+    .info-box {
+      background-color: #f9f9e0;
+      border: 1px solid #ffeb3b;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    dl dt {
+      font-weight: 700;
+      margin-top: 1rem;
+      cursor: pointer;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      padding: 10px;
+      background-color: var(--light-bg);
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    dl dt:hover {
+      background-color: #e0f0ff;
+    }
+    dl dd {
+      margin-left: 0;
+      padding: 1rem;
+      border-left: 3px solid var(--primary-color);
+      margin-bottom: 1rem;
+      display: none;
+    }
+    dl dt.active + dd {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+      background-color: #e0e0e0;
+      margin-top: 2rem;
+    }
+    .graph-container {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .external-links {
+      margin-top: 2rem;
+      background-color: #f8f8f8;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .external-links ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .external-links a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    /* Cost Calculator CSS */
+    .cost-calculator {
+      background-color: var(--light-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .form-group select, .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    #result-area {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 6px;
+      border: 2px solid var(--secondary-color);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>30평대 인테리어 비용: 평균 예상 금액, 합리적인 견적 가이드 (2026년 기준)</h1>
+    <p>30평대 아파트 리모델링, 내 예산은 얼마일까요? 2026년 최신 데이터 기반으로 분석한 인테리어 비용의 모든 것.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#비용분석">비용 분석</a></li>
+      <li><a href="#절약팁">비용 절약 팁</a></li>
+      <li><a href="#지역별">지역별 가격</a></li>
+      <li><a href="#FAQ">자주 묻는 질문</a></li>
+      <li><a href="#견적문의">견적 문의</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="비용분석">
+      <h2>30평대 인테리어 비용 분석: 2026년 예상 금액</h2>
+      <p>30평대 아파트 인테리어는 주택 리모델링의 가장 일반적인 규모입니다. 고객님들이 가장 궁금해하시는 것은 '30평대 인테리어 비용이 정확히 얼마인가?'입니다. 하지만 비용은 단순히 평당 가격으로 계산하기 어렵습니다. 시공 범위, 자재 등급, 업체 역량, 지역별 인건비 등 다양한 요소에 따라 견적 금액이 크게 달라지기 때문입니다. 본 가이드에서는 2026년 최신 데이터를 바탕으로 합리적인 30평대 인테리어 평균 비용을 제시하고, 고객님의 예산에 맞는 계획을 세울 수 있도록 돕습니다.</p>
+
+      <h3>핵심 비용 요소 분석: 전체 vs. 부분 인테리어</h3>
+      <div class="info-box">
+          <p><strong>30평대 인테리어 비용의 평균적인 범위 (2026년 기준):</strong></p>
+          <ul>
+              <li><strong>부분 인테리어 (주요 공간만):</strong> 1,000만원 ~ 2,500만원</li>
+              <li><strong>전체 리모델링 (Standard 등급):</strong> 3,000만원 ~ 4,500만원</li>
+              <li><strong>전체 리모델링 (Premium 등급):</strong> 5,000만원 ~ 7,000만원 이상</li>
+          </ul>
+      </div>
+
+      <h4>1. 30평대 전체 리모델링 비용 분석 (Standard vs. Premium)</h4>
+      <p>전체 리모델링은 주방, 욕실, 바닥재, 도배, 조명, 문 교체 등 모든 부분을 포함합니다. 견적을 결정하는 가장 큰 요인은 자재의 등급입니다.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>Standard (가성비)</th>
+            <th>Premium (고급 자재)</th>
+            <th>시공 범위</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>예상 금액</strong></td>
+            <td><strong>3,000만원 ~ 4,500만원</strong></td>
+            <td><strong>5,000만원 ~ 7,000만원</strong></td>
+            <td>전체 철거, 기본 설비, 마감재 교체</td>
+          </tr>
+          <tr>
+            <td>바닥재</td>
+            <td>강마루, 데코타일</td>
+            <td>원목마루, 포세린타일</td>
+            <td>전체 면적</td>
+          </tr>
+          <tr>
+            <td>주방가구</td>
+            <td>국산 중저가 브랜드 (한샘, 리바트 등)</td>
+            <td>수입 브랜드, 맞춤 제작 (상판 엔지니어드 스톤)</td>
+            <td>주방 수납장, 싱크대</td>
+          </tr>
+          <tr>
+            <td>욕실</td>
+            <td>국산 위생도기, 덧방 시공 (1개소 기준)</td>
+            <td>수입 위생도기, 방수 공사 포함 (2개소 기준)</td>
+            <td>타일, 변기, 세면대, 샤워부스</td>
+          </tr>
+          <tr>
+            <td>창호 (샷시)</td>
+            <td>부분 교체 또는 필름 시공</td>
+            <td>LG하우시스, KCC 등 고단열 창호 전체 교체</td>
+            <td>발코니, 거실, 방 창호</td>
+          </tr>
+          <tr>
+            <td>조명/전기</td>
+            <td>기본 LED 조명, 스위치/콘센트 교체</td>
+            <td>디자인 조명, 스마트홈 시스템 연동</td>
+            <td>배선, 조명 디자인</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Standard 인테리어 장점:</strong> 합리적인 금액으로 깔끔하고 현대적인 공간을 완성할 수 있습니다. <strong>단점:</strong> 자재 선택의 폭이 좁고, 내구성이나 디자인 측면에서 아쉬움이 남을 수 있습니다.</p>
+      <p><strong>Premium 인테리어 장점:</strong> 높은 내구성의 고급 자재를 사용하며, 고객 맞춤형 디자인 구현이 가능합니다. <strong>단점:</strong> 초기 투자 비용이 높으며, 시공 기간이 길어질 수 있습니다.</p>
+
+      <h4>2. 30평대 부분 인테리어 비용 분석 (주요 공간 중심)</h4>
+      <p>부분 인테리어는 예산을 절감하면서도 집의 분위기를 크게 바꿀 수 있는 방법입니다. 특히 주방과 욕실 리모델링은 비용 대비 만족도가 높습니다.</p>
+      <ul>
+        <li><strong>주방 리모델링 (평균 500만원 ~ 1,500만원):</strong> 주방가구(싱크대) 교체, 타일 작업, 주방 후드 교체 등이 포함됩니다. 'ㄴ'자형 주방이 'ㄷ'자형 대면형 주방으로 구조를 변경할 경우 비용이 상승합니다.</li>
+        <li><strong>욕실 리모델링 (1개소당 평균 300만원 ~ 500만원):</strong> 타일 덧방 시공이 일반적이며, 방수 공사를 새로 할 경우 추가 비용이 발생합니다.</li>
+        <li><strong>바닥재/도배 (평균 300만원 ~ 600만원):</strong> 바닥 평탄화 작업이나 벽 철거 등 추가 공정이 없으면 비교적 저렴합니다.</li>
+      </ul>
+
+      <div class="keyword-tags" aria-label="연관 키워드">
+        <a href="#비용분석">30평대 인테리어 평균</a>
+        <a href="#비용분석">30평대 인테리어 예상 금액</a>
+        <a href="#절약팁">인테리어 비용 저렴한곳</a>
+        <a href="#FAQ">30평대 인테리어 장단점</a>
+        <a href="#FAQ">인테리어 업체 선정 방법</a>
+        <a href="#지역별">서울 인테리어 비용</a>
+        <a href="#지역별">경기 인테리어 비용</a>
+        <a href="#비용분석">인테리어 견적 비교</a>
+      </div>
+    </section>
+
+    <section id="절약팁">
+      <h2>30평대 인테리어 비용 절약 팁과 주의사항</h2>
+      <p>합리적인 비용으로 30평대 인테리어를 완성하기 위해서는 몇 가지 핵심 전략이 필요합니다. 인테리어 비용을 줄이면서도 만족도를 높이는 방법과, 예상치 못한 추가 비용을 막기 위한 주의사항을 알려드립니다.</p>
+
+      <h3>인테리어 비용 절감 전략: A부터 Z까지</h3>
+      <h4>1. 시공 범위 명확화 및 자재 선택</h4>
+      <p>가장 중요한 것은 '꼭 필요한 것'과 '원하는 것'을 구분하는 것입니다. 전체 철거를 최소화하고, 재활용 가능한 부분(예: 문, 샷시)은 필름 시공으로 대체하는 것이 비용 절감에 효과적입니다. 자재는 브랜드 제품을 고집하기보다는 디자인과 품질이 검증된 가성비 좋은 제품을 선택하면 20% 이상의 비용을 절감할 수 있습니다.</p>
+      <div class="graph-container">
+        <!-- Placeholder for a simple bar chart or pie chart -->
+        <img src="https://via.placeholder.com/600x300?text=30평대+인테리어+비용+분포+그래프" alt="30평대 인테리어 비용 구성 요소 그래프">
+        <p><em>인테리어 비용 구성 요소 (자재 vs. 인건비)</em></p>
+      </div>
+
+      <h4>2. 저렴한 인테리어 업체 선정 노하우</h4>
+      <p>인테리어 업체 선정 시에는 최소 3곳 이상의 업체에서 견적을 받는 것이 좋습니다. 단순히 싼곳을 찾는 것보다, 투명한 견적을 제시하고 시공 경험이 풍부한 업체를 찾는 것이 중요합니다. 특히 <strong>내돈내산 후기</strong>나 <strong>가입</strong>한 지 오래된 커뮤니티의 <strong>추천</strong>을 참고하여 신뢰성 있는 업체를 선별해야 합니다. 구두 계약은 피하고, 상세한 견적서와 계약서를 작성하여 추가 비용 발생의 여지를 줄이는 것이 중요합니다.</p>
+      <p><strong>업체 선정 체크리스트:</strong></p>
+      <ul>
+          <li><strong>견적 투명성:</strong> 자재비, 인건비, 부가세 등이 명확하게 분리되어 있는가?</li>
+          <li><strong>시공 경험:</strong> 30평대 아파트 시공 경험이 충분한가? (포트폴리오 확인)</li>
+          <li><strong>계약서:</strong> A/S 기간 및 범위가 명시되어 있는 표준 계약서를 사용하는가?</li>
+      </ul>
+
+      <h3>인테리어 비용 상승을 유발하는 함정 (주의사항)</h3>
+      <p>인테리어 공사 중 예기치 않은 추가 비용(일명 '추가금 폭탄')이 발생하는 경우가 많습니다. 특히 <strong>장단점</strong>을 제대로 파악하지 않고 선택한 업체에서 발생하는 경우가 많습니다. 이를 방지하기 위해서는 꼼꼼한 사전 조사가 필수입니다. <strong>싼곳</strong>만 고집하여 비전문적인 업체에 맡기면 오히려 재시공 비용이 발생할 수 있으므로, 초기 견적에서 <strong>평균</strong> 가격대를 크게 벗어나는 업체는 주의해야 합니다.</p>
+      <p><strong>주의해야 할 추가 비용 항목:</strong></p>
+      <ul>
+          <li><strong>철거 비용:</strong> 벽 철거, 폐기물 처리 등은 별도 항목으로 청구될 수 있습니다.</li>
+          <li><strong>샷시 교체:</strong> 샷시는 단가가 높은 항목으로, 견적에 포함되어 있는지 확인해야 합니다.</li>
+          <li><strong>가구 제작:</strong> 맞춤 가구는 기성 가구보다 훨씬 비싸므로 예산에 맞춰 신중하게 결정해야 합니다.</li>
+      </ul>
+      <p><strong>인테리어 비용 차이점:</strong> 단순히 <strong>가격</strong>만 비교할 것이 아니라, 자재의 등급과 A/S 보장 여부를 확인하여 <strong>장단점</strong>을 비교해야 합니다. <strong>저렴한곳</strong>이라도 품질이 떨어지면 결국 <strong>내돈내산</strong>의 후회로 이어질 수 있습니다.</p>
+    </section>
+
+    <section id="지역별">
+      <h2>전국 30평대 인테리어 비용: 지역별 평균 금액 비교</h2>
+      <p>인테리어 비용은 지역별 인건비와 물류비에 따라 차이가 발생합니다. 특히 서울, 경기, 인천 등 수도권 지역과 지방 광역시는 인건비 차이가 크며, 이는 전체 비용에 영향을 미칩니다. 2026년 기준, 전국 주요 도시의 30평대 인테리어 평균 비용을 비교해 드립니다.</p>
+
+      <h3>지역별 인테리어 비용 비교표 (2026년 기준)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>지역</th>
+            <th>30평대 인테리어 평균 비용 (Standard)</th>
+            <th>특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>서울 (강남, 송파, 용산 등)</td>
+            <td><strong>3,500만원 ~ 5,000만원</strong></td>
+            <td>인건비 및 물가 수준이 가장 높음. 고급 자재 수요가 많음.</td>
+          </tr>
+          <tr>
+            <td>경기 (성남, 용인, 분당 등)</td>
+            <td><strong>3,200만원 ~ 4,800만원</strong></td>
+            <td>서울과 유사하나 일부 외곽 지역은 상대적으로 저렴함.</td>
+          </tr>
+          <tr>
+            <td>인천 (송도, 청라 등)</td>
+            <td><strong>3,000만원 ~ 4,500만원</strong></td>
+            <td>수도권이지만 서울 대비 다소 낮은 인건비. 신축 아파트 인테리어 수요 높음.</td>
+          </tr>
+          <tr>
+            <td>부산 (해운대, 센텀 등)</td>
+            <td><strong>2,800만원 ~ 4,200만원</strong></td>
+            <td>지방 광역시 중 높은 인건비와 물가 수준.</td>
+          </tr>
+          <tr>
+            <td>대구 (수성구 등)</td>
+            <td><strong>2,500만원 ~ 3,800만원</strong></td>
+            <td>지역 업체 간 경쟁 심화로 가성비 좋은 곳 많음.</td>
+          </tr>
+          <tr>
+            <td>대전 (유성구 등)</td>
+            <td><strong>2,600만원 ~ 3,900만원</strong></td>
+            <td>합리적인 가격대의 업체 다수.</td>
+          </tr>
+          <tr>
+            <td>광주 (서구, 광산구 등)</td>
+            <td><strong>2,500만원 ~ 3,700만원</strong></td>
+            <td>수도권 대비 낮은 인건비로 비용 절감 가능.</td>
+          </tr>
+          <tr>
+            <td>울산, 창원, 김해, 양산 등</td>
+            <td><strong>2,400만원 ~ 3,600만원</strong></td>
+            <td>경남 지역 주요 도시, 인건비가 비교적 안정적.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>전국 주요 지역별 키워드 리스트 (30평대 인테리어 견적)</h3>
+      <p>전국 주요 도시의 30평대 인테리어 관련 키워드 검색량 분석 결과, 많은 분들이 <strong>지역명 + 인테리어 비용</strong> 조합으로 검색하고 있습니다. 이는 지역별로 <strong>저렴한곳</strong>이나 <strong>평균</strong> 금액을 확인하려는 의도입니다. 다음은 30개 이상의 주요 지역 키워드입니다:</p>
+      <div class="keyword-tags regional">
+          <a href="#">서울 30평대 인테리어</a>
+          <a href="#">부산 30평대 인테리어</a>
+          <a href="#">인천 30평대 인테리어</a>
+          <a href="#">대구 30평대 인테리어</a>
+          <a href="#">대전 30평대 인테리어</a>
+          <a href="#">광주 30평대 인테리어</a>
+          <a href="#">울산 30평대 인테리어</a>
+          <a href="#">세종 30평대 인테리어</a>
+          <a href="#">수원 30평대 인테리어</a>
+          <a href="#">용인 30평대 인테리어</a>
+          <a href="#">고양 30평대 인테리어</a>
+          <a href="#">성남 30평대 인테리어</a>
+          <a href="#">화성 30평대 인테리어</a>
+          <a href="#">청주 30평대 인테리어</a>
+          <a href="#">천안 30평대 인테리어</a>
+          <a href="#">전주 30평대 인테리어</a>
+          <a href="#">포항 30평대 인테리어</a>
+          <a href="#">창원 30평대 인테리어</a>
+          <a href="#">김해 30평대 인테리어</a>
+          <a href="#">제주 30평대 인테리어</a>
+          <a href="#">구미 30평대 인테리어</a>
+          <a href="#">평택 30평대 인테리어</a>
+          <a href="#">파주 30평대 인테리어</a>
+          <a href="#">남양주 30평대 인테리어</a>
+          <a href="#">의정부 30평대 인테리어</a>
+          <a href="#">동탄 30평대 인테리어</a>
+          <a href="#">안산 30평대 인테리어</a>
+          <a href="#">부천 30평대 인테리어</a>
+          <a href="#">강릉 30평대 인테리어</a>
+          <a href="#">원주 30평대 인테리어</a>
+          <a href="#">순천 30평대 인테리어</a>
+          <a href="#">목포 30평대 인테리어</a>
+      </div>
+    </section>
+
+    <section id="FAQ">
+      <h2>자주 묻는 질문: 인테리어 비용 FAQ (네이버 스니펫 최적화)</h2>
+      <p>인테리어 공사를 앞둔 분들이 공통적으로 궁금해하는 질문들을 모아 답변해 드립니다. 30평대 인테리어 <strong>장단점</strong>, <strong>차이점</strong>, <strong>내돈내산</strong> <strong>후기</strong> 등 다양한 질문을 통해 궁금증을 해소해 드립니다.</p>
+      <dl>
+        <dt tabindex="0" aria-expanded="false">Q1. 30평대 전체 인테리어 평균 비용은 얼마인가요?</dt>
+        <dd>2026년 기준으로 30평대 전체 리모델링 비용은 자재 등급에 따라 평균 3,000만원에서 7,000만원 이상으로 형성됩니다. 기본 시공(Standard 등급)을 선택할 경우 3,000만원~4,500만원 선이 가장 일반적입니다.</dd>
+        <dt tabindex="0" aria-expanded="false">Q2. 인테리어 비용 중 가장 큰 비중을 차지하는 항목은 무엇인가요?</dt>
+        <dd>일반적으로 인테리어 비용은 자재비(약 50~60%)와 인건비(약 40~50%)로 나뉩니다. 이 중 창호(샷시), 주방가구(싱크대), 욕실 자재가 가장 높은 비중을 차지합니다. 특히 창호는 단열 성능에 직접적인 영향을 미치므로, 비용 절감을 위해 무작정 저렴한 제품을 선택하는 것은 장기적으로 손해일 수 있습니다.</dd>
+        <dt tabindex="0" aria-expanded="false">Q3. 인테리어 업체 <strong>장단점</strong> 비교 시, <strong>저렴한곳</strong>과 비싼곳의 <strong>차이점</strong>은 무엇인가요?</dt>
+        <dd><strong>저렴한곳</strong>은 주로 '박리다매' 방식으로 운영하거나, 자재 등급을 낮게 사용하여 비용을 줄이는 경우가 많습니다. 반면 <strong>비싼곳</strong>은 고급 자재를 사용하며, 디자인 설계비와 현장 관리비가 포함되어 있습니다. 저렴한 곳의 <strong>단점</strong>은 A/S 보장이 불확실할 수 있고, 시공 품질이 떨어질 수 있다는 점입니다. <strong>장점</strong>은 초기 비용이 적게 든다는 것입니다. 반대로 비싼 곳은 A/S가 확실하고 시공 품질이 높지만 <strong>단점</strong>은 예산 초과 가능성이 높다는 것입니다. 고객님은 예산과 기대하는 품질을 고려하여 <strong>차이점</strong>을 파악해야 합니다.</dd>
+        <dt tabindex="0" aria-expanded="false">Q4. 인테리어 공사 기간은 얼마나 걸리나요?</dt>
+        <dd>30평대 전체 리모델링 기준으로 약 3주에서 4주 정도 소요됩니다. 부분 인테리어는 1~2주 정도 걸립니다. 철거, 목공, 설비, 마감재 설치 등 공정마다 대기 시간이 필요하며, 자재 수급 상황이나 날씨에 따라 변동될 수 있습니다.</dd>
+        <dt tabindex="0" aria-expanded="false">Q5. <strong>내돈내산 후기</strong>를 참고하여 좋은 업체를 고르는 팁이 있나요?</dt>
+        <dd>단순히 '최고예요' 같은 찬양 일색의 <strong>후기</strong>보다는 구체적인 시공 과정이나 문제 해결 과정을 상세하게 기술한 <strong>내돈내산 후기</strong>를 참고하세요. 또한, 포트폴리오의 사진이 퀄리티는 높지만 실제 현장과 다를 수 있으므로, 해당 업체가 작업한 실제 아파트 현장을 방문해 보는 것도 좋은 방법입니다. <strong>저렴한곳</strong>을 찾는 것도 중요하지만, <strong>순위</strong>나 <strong>추천</strong>을 맹신하지 말고 꼼꼼히 검증해야 합니다.</dd>
+      </dl>
+    </section>
+
+    <section id="견적문의">
+      <h2>30평대 인테리어 예상 견적 문의 및 계산기</h2>
+      <p>저희는 고객님의 예산에 맞는 맞춤형 인테리어 견적을 제공합니다. 아래의 간편 계산기를 통해 예상 비용을 확인하시고, 상세 견적을 문의해 주세요. 전문가와 상담하여 <strong>30평대 인테리어 비용</strong>을 합리적으로 절감할 수 있는 팁을 얻을 수 있습니다.</p>
+
+      <!-- Interactive Cost Calculator (for retention) -->
+      <div class="cost-calculator">
+        <h3>30평대 인테리어 예상 비용 간편 계산기 (베타 버전)</h3>
+        <p>평균 비용을 기반으로 계산되므로 실제 견적과 차이가 있을 수 있습니다. 참고용으로 활용해 주세요.</p>
+        <form id="calc-form">
+          <div class="form-group">
+            <label for="pyeong">아파트 평수:</label>
+            <select id="pyeong">
+              <option value="30">30평대 (30~35평)</option>
+              <option value="36">36평 이상</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="type">시공 범위 선택:</label>
+            <select id="type">
+              <option value="full_std">전체 리모델링 (Standard)</option>
+              <option value="full_premium">전체 리모델링 (Premium)</option>
+              <option value="partial">부분 인테리어 (주요 공간)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">지역 선택 (비용 차이 반영):</label>
+            <select id="location">
+              <option value="capital">수도권 (서울/경기/인천)</option>
+              <option value="metro">광역시 (부산/대구/대전 등)</option>
+              <option value="province">지방 (그 외)</option>
+            </select>
+          </div>
+          <button type="button" onclick="calculateCost()" class="cta-button">예상 비용 계산하기</button>
+        </form>
+        <div id="result-area" style="display: none;"></div>
+      </div>
+
+      <!-- Contact Information -->
+      <h3>상세 견적 상담 문의</h3>
+      <p>정확한 <strong>30평대 인테리어 비용</strong>과 <strong>장단점</strong> 비교를 위해서는 전문가와 1:1 상담이 필수입니다. 아래 연락처로 문의하시면 상세한 견적서를 받아보실 수 있습니다.</p>
+      <ul>
+        <li>전화: 010-1234-5678</li>
+        <li>이메일: contact@yourdomain.com</li>
+      </ul>
+      <a href="mailto:contact@yourdomain.com" class="cta-button" aria-label="이메일로 문의하기">이메일로 문의하기</a>
+
+      <!-- External Links for E-A-T -->
+      <div class="external-links">
+        <h3>신뢰성 있는 외부 정보 출처 (E-A-T 확보)</h3>
+        <ul>
+            <li><a href="https://www.namu.wiki/w/%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4" target="_blank">나무위키 - 인테리어</a> (인테리어의 정의, 역사, 용어 설명 참고)</li>
+            <li><a href="https://www.mlit.go.kr/index.do" target="_blank">국토교통부</a> (부동산 정책 및 주택 통계 자료)</li>
+            <li><a href="https://www.kca.go.kr/index.do" target="_blank">한국소비자원</a> (인테리어 관련 소비자 피해 구제 사례 및 주의사항)</li>
+            <li><a href="http://www.kidi.or.kr/" target="_blank">한국실내건축가협회</a> (인테리어 산업 표준 및 전문가 정보)</li>
+            <li><a href="https://www.kof.or.kr/" target="_blank">대한건축사협회</a> (건축 관련 법규 및 정보)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // FAQ 아코디언 기능 (접기/펼치기)
+    document.querySelectorAll('dl dt').forEach((dt) => {
+      dt.addEventListener('click', () => {
+        const expanded = dt.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('dl dt').forEach(item => {
+            item.classList.remove('active');
+            item.setAttribute('aria-expanded', 'false');
+            item.nextElementSibling.style.display = 'none'; // Ensure all others are closed
+        });
+        if (!expanded) {
+            dt.classList.add('active');
+            dt.setAttribute('aria-expanded', 'true');
+            dt.nextElementSibling.style.display = 'block';
+        }
+      });
+      dt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          dt.click();
+        }
+      });
+    });
+
+    // Cost Calculator Logic
+    function calculateCost() {
+      const pyeong = document.getElementById('pyeong').value;
+      const type = document.getElementById('type').value;
+      const location = document.getElementById('location').value;
+      const resultArea = document.getElementById('result-area');
+
+      // Base costs (in KRW, based on 30평 standard)
+      let baseCost = 0;
+      if (type === 'full_std') {
+        baseCost = 35000000;
+      } else if (type === 'full_premium') {
+        baseCost = 55000000;
+      } else if (type === 'partial') {
+        baseCost = 15000000;
+      }
+
+      // Adjust based on pyeong size
+      let pyeongFactor = 1;
+      if (pyeong === '36') {
+        pyeongFactor = 1.15; // 15% increase for larger size
+      }
+
+      // Adjust based on location (cost of labor/materials)
+      let locationFactor = 1;
+      if (location === 'capital') {
+        locationFactor = 1.1; // 10% higher for capital region
+      } else if (location === 'province') {
+        locationFactor = 0.9; // 10% lower for non-metro province
+      }
+
+      const estimatedCost = Math.round(baseCost * pyeongFactor * locationFactor / 1000000) * 1000000;
+      const minCost = estimatedCost - 5000000;
+      const maxCost = estimatedCost + 5000000;
+
+      resultArea.innerHTML = `<strong>${minCost.toLocaleString()}원 ~ ${maxCost.toLocaleString()}원</strong><br><em>(선택하신 조건의 예상 견적 범위입니다)</em>`;
+      resultArea.style.display = 'block';
+    }
+  </script>
+
+  
